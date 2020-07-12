@@ -1,0 +1,14 @@
+{
+  "name": "binary-tree-in-order-traversal-javascript",
+  "version": "1.0.0",
+  "description": "Traverses a binary tree in-order",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Ash Srinivas",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^26.1.0"
+  }
+}
