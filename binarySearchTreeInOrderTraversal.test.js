@@ -7,60 +7,60 @@ test('null root TreeNode returns a result of empty array', () => {
 
 test('complete tree returns in-order traversal', () => {
   // Arrange
-  const p = new TreeNode('P');
-  const y = new TreeNode('Y');
-  const t = new TreeNode('T');
-  const h = new TreeNode('H');
-  const o = new TreeNode('O');
-  const n = new TreeNode('N');
+  const n1 = new TreeNode(1);
+  const n2 = new TreeNode(2);
+  const n3 = new TreeNode(3);
+  const n4 = new TreeNode(4);
+  const n5 = new TreeNode(5);
+  const n6 = new TreeNode(6);
 
-  const rootNode = h;
-  h.left = y;
-  y.left = p;
-  y.right = t;
-  h.right = n;
-  n.left = o;
+  const rootNode = n4;
+  n4.left = n2;
+  n2.left = n1;
+  n2.right = n3;
+  n4.right = n6;
+  n6.left = n5;
 
   // Act & Assert
-  expect(inOrder(rootNode)).toStrictEqual(['P', 'Y', 'T', 'H', 'O', 'N']);
+  expect(inOrder(rootNode)).toStrictEqual([1, 2, 3, 4, 5, 6]);
 });
 
 test('left-only tree returns in-order traversal', () => {
   // Arrange
-  const p = new TreeNode('P');
-  const y = new TreeNode('Y');
-  const t = new TreeNode('T');
-  const h = new TreeNode('H');
-  const o = new TreeNode('O');
-  const n = new TreeNode('N');
+  const n1 = new TreeNode(1);
+  const n2 = new TreeNode(2);
+  const n3 = new TreeNode(3);
+  const n4 = new TreeNode(4);
+  const n5 = new TreeNode(5);
+  const n6 = new TreeNode(6);
 
-  const rootNode = n;
-  n.left = o;
-  o.left = h;
-  h.left = t;
-  t.left = y;
-  y.left = p;
+  const rootNode = n6;
+  n6.left = n5;
+  n5.left = n4;
+  n4.left = n3;
+  n3.left = n2;
+  n2.left = n1;
 
   // Act & Assert
-  expect(inOrder(rootNode)).toStrictEqual(['P', 'Y', 'T', 'H', 'O', 'N']);
+  expect(inOrder(rootNode)).toStrictEqual([1, 2, 3, 4, 5, 6]);
 });
 
 test('right-only tree returns in-order traversal', () => {
   // Arrange
-  const p = new TreeNode('P');
-  const y = new TreeNode('Y');
-  const t = new TreeNode('T');
-  const h = new TreeNode('H');
-  const o = new TreeNode('O');
-  const n = new TreeNode('N');
+  const n1 = new TreeNode(1);
+  const n2 = new TreeNode(2);
+  const n3 = new TreeNode(3);
+  const n4 = new TreeNode(4);
+  const n5 = new TreeNode(5);
+  const n6 = new TreeNode(6);
 
-  const rootNode = p;
-  p.right = y;
-  y.right = t;
-  t.right = h;
-  h.right = o;
-  o.right = n;
+  const rootNode = n1;
+  n1.right = n2;
+  n2.right = n3;
+  n3.right = n4;
+  n4.right = n5;
+  n5.right = n6;
 
   // Act & Assert
-  expect(inOrder(rootNode)).toStrictEqual(['P', 'Y', 'T', 'H', 'O', 'N']);
+  expect(inOrder(rootNode)).toStrictEqual([1, 2, 3, 4, 5, 6]);
 });
